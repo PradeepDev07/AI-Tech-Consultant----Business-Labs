@@ -1,0 +1,54 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Testing and linting
+.pytest_cache/
+.coverage
+htmlcov/
+.ruff_cache/
+
+# Local databases and vector stores
+*.db
+*.sqlite
+*.sqlite3
+storage/chroma/
+storage/chroma_db/
+storage/images/
+storage/cache/
+storage/*.db
+storage/*.sqlite
+!storage/.gitkeep
+
+# Operating system files
+.DS_Store
+Thumbs.db
