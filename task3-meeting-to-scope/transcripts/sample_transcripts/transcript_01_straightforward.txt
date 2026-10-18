@@ -1,0 +1,26 @@
+[SYNTHETIC TRANSCRIPT - FOR TESTING AND DEMONSTRATION PURPOSES ONLY]
+Meeting Title: Coastal Chamber Directory Discovery Call
+Date: October 18, 2026
+Participants: Sarah Connor (Consultant), Dave Martinez (Client, Coastal Chamber)
+
+Sarah: Hi Dave, thanks for joining today's discovery session for the new Coastal Chamber business directory. Let's walk through your core objectives.
+
+Dave: Thanks Sarah. We currently have around 2,500 local business members in a spreadsheet. Our primary goal is to migrate away from static PDFs and give our community an interactive directory where visitors can search members by city, neighborhood, and category.
+
+Sarah: Understood. Can you describe how you want member search to function?
+
+Dave: We need a prominent search bar on the homepage. Visitors should be able to type a keyword or select a category like 'Restaurants' or 'Home Services', and filter results by radius or city. We definitely need Google Maps integration so people see pins for each local store.
+
+Sarah: Excellent. How will membership tiers and payments be handled?
+
+Dave: We want automated recurring payments. We use Stripe for our merchant processing. New businesses should be able to sign up, pick a monthly or annual membership plan, enter their credit card via Stripe, and have their profile published automatically upon successful charge.
+
+Sarah: What about your existing 2,500 members?
+
+Dave: We need to import our legacy member data from a clean CSV export. It has company names, addresses, phone numbers, and categories.
+
+Sarah: What is explicitly out of scope for this initial launch?
+
+Dave: We do not need a custom mobile app for iOS or Android. A mobile-responsive web directory is completely fine. We also don't need multi-language translations for phase 1.
+
+Sarah: Great. That gives us a clear initial baseline for the Coastal Chamber directory!

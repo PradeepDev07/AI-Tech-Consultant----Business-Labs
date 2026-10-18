@@ -1,0 +1,16 @@
+[SYNTHETIC TRANSCRIPT - FOR TESTING AND DEMONSTRATION PURPOSES ONLY]
+Meeting Title: Coastal Chamber Scope Revision & Change Request Call
+Date: October 25, 2026
+Participants: Sarah Connor (Consultant), Dave Martinez (Client, Coastal Chamber)
+
+Sarah: Hi Dave, good to connect again. You mentioned on email that your executive board had a strategy meeting and wants to adjust the scope we approved last week.
+
+Dave: Yes Sarah, thank you. We had a board review, and there are three major adjustments to our approved scope:
+
+First, we definitely want to add Automated Member Lead Distribution. When a homeowner or visitor submits a request for a quote, the system should automatically match and dispatch the lead to member businesses in that specific category. That's a must-have now.
+
+Second, regarding the legacy data migration: our staff decided to manually review and re-enter our 2,500 records to clean up bad data. So we want to remove the CSV import requirement completely from your team's deliverables. You can cancel the CSV migration task.
+
+Third, our board decided we cannot use Stripe for payments. We have an existing municipal banking agreement that requires PayPal only without recurring fees. So we need to modify the payment gateway integration from Stripe recurring subscriptions to PayPal single annual fee checkout.
+
+Sarah: Understood Dave. These are material scope changes. I will generate a formal Scope Difference Report showing the added lead matching feature, the removed CSV import, the modified payment gateway, and the resulting delta in estimated hours. We'll present the revision for formal sign-off.
