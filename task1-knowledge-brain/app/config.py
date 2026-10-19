@@ -1,7 +1,7 @@
 """Application configuration with Pydantic v2 Settings."""
 
 from pathlib import Path
-from pydantic import Field
+from pydantic import AliasChoices, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -23,9 +23,13 @@ class Settings(BaseSettings):
 
     # API Server Configuration
     api_host: str = Field(default="0.0.0.0", alias="API_HOST")
-    api_port: int = Field(default=8000, alias="API_PORT")
+    api_port: int = Field(
+        default=8000,
+        validation_alias=AliasChoices("PORT", "API_PORT"),
+    )
 
     # Storage Paths
+    data_dir: str | None = Field(default=None, alias="DATA_DIR")
     sqlite_db_path: str = Field(
         default="storage/knowledge_brain.db", alias="SQLITE_DB_PATH"
     )
@@ -96,25 +100,34 @@ class Settings(BaseSettings):
 
     def resolve_sqlite_path(self) -> Path:
         """Return resolved path to SQLite database."""
-        path = Path(self.sqlite_db_path)
-        if not path.is_absolute():
-            path = Path(__file__).resolve().parent.parent / path
+        if self.data_dir and self.sqlite_db_path == "storage/knowledge_brain.db":
+            path = Path(self.data_dir) / "knowledge_brain.db"
+        else:
+            path = Path(self.sqlite_db_path)
+            if not path.is_absolute():
+                path = Path(__file__).resolve().parent.parent / path
         path.parent.mkdir(parents=True, exist_ok=True)
         return path
 
     def resolve_chroma_path(self) -> Path:
         """Return resolved path to Chroma persistence directory."""
-        path = Path(self.chroma_persist_dir)
-        if not path.is_absolute():
-            path = Path(__file__).resolve().parent.parent / path
+        if self.data_dir and self.chroma_persist_dir == "storage/chroma_db":
+            path = Path(self.data_dir) / "chroma_db"
+        else:
+            path = Path(self.chroma_persist_dir)
+            if not path.is_absolute():
+                path = Path(__file__).resolve().parent.parent / path
         path.mkdir(parents=True, exist_ok=True)
         return path
 
     def resolve_image_cache_path(self) -> Path:
         """Return resolved path to image cache directory."""
-        path = Path(self.image_cache_dir)
-        if not path.is_absolute():
-            path = Path(__file__).resolve().parent.parent / path
+        if self.data_dir and self.image_cache_dir == "storage/images":
+            path = Path(self.data_dir) / "images"
+        else:
+            path = Path(self.image_cache_dir)
+            if not path.is_absolute():
+                path = Path(__file__).resolve().parent.parent / path
         path.mkdir(parents=True, exist_ok=True)
         return path
 
